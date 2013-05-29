@@ -1,0 +1,74 @@
+
+@font-face {
+    font-family: 'dosisbook';
+    src: url('dosis-book-webfont.eot');
+    src: 
+         url('dosis-book-webfont.svg#dosisbook') format('svg'),
+         url('dosis-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('dosis-book-webfont.woff') format('woff'),
+         url('dosis-book-webfont.ttf') format('truetype');
+         
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dosislight';
+    src: url('dosis-light-webfont.eot');
+    src: 
+         url('dosis-light-webfont.svg#dosislight') format('svg'),
+         url('dosis-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('dosis-light-webfont.woff') format('woff'),
+         url('dosis-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dosismedium';
+    src: url('dosis-medium-webfont.eot');
+    src: 
+         url('dosis-medium-webfont.svg#dosismedium') format('svg'),
+         url('dosis-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('dosis-medium-webfont.woff') format('woff'),
+         url('dosis-medium-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/*Mixins*/
+// Drop shadows
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+}// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+// Gradients
+#gradient {
+  .horizontal(@startColor: #555, @endColor: #333) {
+    background-color: @endColor;
+    background-image: -moz-linear-gradient(left, @startColor, @endColor); // FF 3.6+
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(left, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(left, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(to right, @startColor, @endColor); // Standard, IE10
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@startColor),argb(@endColor))); // IE9 and down
+  }}
+
+  // Border Radius
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
